@@ -36,6 +36,9 @@ module ActiveRecordSurvey
 
 				# Whether this node map is valid
 				def node_map_valid?(potential_node_map)
+					# Must inherit from ActiveRecordSurvey::Node::Question
+					return false if !potential_node_map.node.class.ancestors.include?(::ActiveRecordSurvey::Node::Question)
+
 					# Nothing else added - so yep - valid!
 					return true if self.node_maps.length === 0
 
