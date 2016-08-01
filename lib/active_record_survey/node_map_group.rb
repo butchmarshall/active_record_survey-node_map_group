@@ -8,6 +8,8 @@ require "active_record_survey/node_map_group/version"
 require "active_record_survey/node_map_group/class_methods"
 require "active_record_survey/node_map_group/instance_methods"
 
+require "active_record_survey/node_map/class_methods"
+
 module ActiveRecordSurvey
    class NodeMapGroup < ActiveRecord::Base
    end
@@ -15,3 +17,5 @@ end
 
 ActiveRecordSurvey::NodeMapGroup.send :include, ActiveRecordSurvey::NodeMapGroup::InstanceMethods
 ActiveRecordSurvey::NodeMapGroup.send :extend, ActiveRecordSurvey::NodeMapGroup::ClassMethods
+
+ActiveRecordSurvey::NodeMap.send :extend, ActiveRecordSurvey::NodeMap::ClassMethods
