@@ -1,6 +1,11 @@
 require 'logger'
 require 'rspec'
 require 'factory_girl'
+
+require 'active_record_survey'
+
+require_relative '../spec/factories/active_record_survey/survey'
+
 require 'database_cleaner'
 
 require 'active_record_survey/node_map_group'
